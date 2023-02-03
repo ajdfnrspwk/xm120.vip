@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>复制粘贴内容</title>
+</head>
+<body>
+	<div id="copy-content">
+		<p>这是第一行内容</p>
+		<p>这是第二行内容</p>
+		<p>这是第三行内容</p>
+	</div>
+	<script>
+		let copyContent = document.getElementById('copy-content');
+		copyContent.onclick = function () {
+			let range = document.createRange();
+			range.selectNode(copyContent);
+			window.getSelection().addRange(range);
+			document.execCommand("Copy");
+			alert("复制成功");
+		}
+	</script>
+</body>
+</html>
